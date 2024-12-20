@@ -13,6 +13,14 @@ definition:
       fromEnv: APP_GITHUB_READ_URL
     APP_GITHUB_WRITE_URL:
       fromEnv: APP_GITHUB_WRITE_URL
+    APP_MYPYTHON_AUTHORIZATION_HEADER:
+      fromEnv: APP_MYPYTHON_AUTHORIZATION_HEADER
+    APP_MYPYTHON_READ_URL:
+      fromEnv: APP_MYPYTHON_READ_URL
+    APP_MYPYTHON_WRITE_URL:
+      fromEnv: APP_MYPYTHON_WRITE_URL
   connectors:
     - path: connector/github/connector.yaml
       connectorLinkName: github
+    - path: connector/mypython/connector.yaml
+      connectorLinkName: mypython

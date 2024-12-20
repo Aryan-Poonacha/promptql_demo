@@ -20,7 +20,7 @@ const connectorConfig: duckduckapi = {
 (async () => {
   const connector = await makeConnector(connectorConfig);
   start(connector);
-  const manager = new GitHubIssueSyncManager('', 'promptql_demo');
+  const manager = new GitHubIssueSyncManager('Aryan-Poonacha', 'promptql_demo');
   if (!process.env.GITHUB_API_TOKEN) {
     throw new Error('GITHUB_API_TOKEN environment variable is required');
   }

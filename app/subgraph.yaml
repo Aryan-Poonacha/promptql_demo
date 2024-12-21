@@ -13,6 +13,12 @@ definition:
       fromEnv: APP_GITHUB_READ_URL
     APP_GITHUB_WRITE_URL:
       fromEnv: APP_GITHUB_WRITE_URL
+    APP_MYPOSTGRES_AUTHORIZATION_HEADER:
+      fromEnv: APP_MYPOSTGRES_AUTHORIZATION_HEADER
+    APP_MYPOSTGRES_READ_URL:
+      fromEnv: APP_MYPOSTGRES_READ_URL
+    APP_MYPOSTGRES_WRITE_URL:
+      fromEnv: APP_MYPOSTGRES_WRITE_URL
     APP_MYPYTHON_AUTHORIZATION_HEADER:
       fromEnv: APP_MYPYTHON_AUTHORIZATION_HEADER
     APP_MYPYTHON_READ_URL:
@@ -24,3 +30,5 @@ definition:
       connectorLinkName: github
     - path: connector/mypython/connector.yaml
       connectorLinkName: mypython
+    - path: connector/mypostgres/connector.yaml
+      connectorLinkName: mypostgres

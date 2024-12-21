@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteNetflixShowsByShowIdResponse
+  description: Responses from the 'delete_netflix_shows_by_show_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int4!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[NetflixShows!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteNetflixShowsByShowIdResponse
+    inputTypeName: DeleteNetflixShowsByShowIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: delete_netflix_shows_by_show_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteNetflixShowsByShowIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteNetflixShowsByShowId
+  outputType: DeleteNetflixShowsByShowIdResponse!
+  arguments:
+    - name: keyShowId
+      type: Text!
+    - name: preCheck
+      type: NetflixShowsBoolExp
+      description: Delete permission predicate over the 'netflix_shows' collection
+  source:
+    dataConnectorName: mypostgres
+    dataConnectorCommand:
+      procedure: delete_netflix_shows_by_show_id
+    argumentMapping:
+      keyShowId: key_show_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteNetflixShowsByShowId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'netflix_shows' collection using the 'show_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteNetflixShowsByShowId
+  permissions:
+    - role: admin
+      allowExecution: true
+

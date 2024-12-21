@@ -1,0 +1,68 @@
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: mypython
+  dataConnectorScalarType: Int
+  representation: Int
+  graphql:
+    comparisonExpressionTypeName: IntComparisonExp
+
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: mypython
+  dataConnectorScalarType: String
+  representation: String
+  graphql:
+    comparisonExpressionTypeName: StringComparisonExp
+
+---
+kind: ScalarType
+version: v1
+definition:
+  name: Json
+  graphql:
+    typeName: Json
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: JsonBoolExp
+  operand:
+    scalar:
+      type: Json
+      comparisonOperators: []
+      dataConnectorOperatorMapping:
+        - dataConnectorName: mypython
+          dataConnectorScalarType: Json
+          operatorMapping: {}
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: JsonBoolExp
+
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: mypython
+  dataConnectorScalarType: Json
+  representation: Json
+  graphql:
+    comparisonExpressionTypeName: JsonComparisonExp
+
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: mypython
+  dataConnectorScalarType: Float
+  representation: Float
+  graphql:
+    comparisonExpressionTypeName: FloatComparisonExp
+

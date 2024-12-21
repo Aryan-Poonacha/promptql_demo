@@ -1,0 +1,168 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertNetflixShowsObject
+  fields:
+    - name: castMembers
+      type: Text
+    - name: country
+      type: Text
+    - name: dateAdded
+      type: Date
+    - name: description
+      type: Text
+    - name: director
+      type: Text
+    - name: duration
+      type: Text
+    - name: listedIn
+      type: Text
+    - name: rating
+      type: Text
+    - name: releaseYear
+      type: Int4
+    - name: showId
+      type: Text!
+    - name: title
+      type: Text
+    - name: type
+      type: Text
+  graphql:
+    typeName: InsertNetflixShowsObject
+    inputTypeName: InsertNetflixShowsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: insert_netflix_shows_object
+      fieldMapping:
+        castMembers:
+          column:
+            name: cast_members
+        country:
+          column:
+            name: country
+        dateAdded:
+          column:
+            name: date_added
+        description:
+          column:
+            name: description
+        director:
+          column:
+            name: director
+        duration:
+          column:
+            name: duration
+        listedIn:
+          column:
+            name: listed_in
+        rating:
+          column:
+            name: rating
+        releaseYear:
+          column:
+            name: release_year
+        showId:
+          column:
+            name: show_id
+        title:
+          column:
+            name: title
+        type:
+          column:
+            name: type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertNetflixShowsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - castMembers
+          - country
+          - dateAdded
+          - description
+          - director
+          - duration
+          - listedIn
+          - rating
+          - releaseYear
+          - showId
+          - title
+          - type
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertNetflixShowsResponse
+  description: Responses from the 'insert_netflix_shows' procedure
+  fields:
+    - name: affectedRows
+      type: Int4!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[NetflixShows!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertNetflixShowsResponse
+    inputTypeName: InsertNetflixShowsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: insert_netflix_shows_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertNetflixShowsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertNetflixShows
+  outputType: InsertNetflixShowsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertNetflixShowsObject!]!"
+    - name: postCheck
+      type: NetflixShowsBoolExp
+      description: Insert permission predicate over the 'netflix_shows' collection
+  source:
+    dataConnectorName: mypostgres
+    dataConnectorCommand:
+      procedure: insert_netflix_shows
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertNetflixShows
+    rootFieldKind: Mutation
+  description: Insert into the netflix_shows table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertNetflixShows
+  permissions:
+    - role: admin
+      allowExecution: true
+

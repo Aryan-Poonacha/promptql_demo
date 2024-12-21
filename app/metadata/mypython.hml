@@ -14,13 +14,115 @@ definition:
   schema:
     version: v0.1
     schema:
-      scalar_types: {}
-      object_types: {}
+      scalar_types:
+        Boolean:
+          representation:
+            type: boolean
+          aggregate_functions: {}
+          comparison_operators: {}
+        Float:
+          representation:
+            type: float64
+          aggregate_functions: {}
+          comparison_operators: {}
+        HeaderMap:
+          representation:
+            type: json
+          aggregate_functions: {}
+          comparison_operators: {}
+        Int:
+          representation:
+            type: integer
+          aggregate_functions: {}
+          comparison_operators: {}
+        Json:
+          representation:
+            type: json
+          aggregate_functions: {}
+          comparison_operators: {}
+        String:
+          representation:
+            type: string
+          aggregate_functions: {}
+          comparison_operators: {}
+      object_types:
+        semanticSearchWiki:
+          fields:
+            content:
+              type:
+                type: named
+                name: String
+            last_modified:
+              type:
+                type: named
+                name: Json
+            namespace:
+              type:
+                type: named
+                name: Int
+            page_id:
+              type:
+                type: named
+                name: Int
+            similarity:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: Float
+            title:
+              type:
+                type: named
+                name: String
       collections: []
-      functions: []
-      procedures: []
+      functions:
+        - name: semanticSearchWiki
+          description: Search wiki pages using semantic similarity with optional namespace filtering
+          arguments:
+            limit:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: Int
+            namespace:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: Int
+            offset:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: Int
+            text:
+              type:
+                type: named
+                name: String
+          result_type:
+            type: array
+            element_type:
+              type: named
+              name: semanticSearchWiki
+      procedures:
+        - name: vectorizeWiki
+          description: Process MediaWiki XML dump and generate embeddings for all pages
+          arguments:
+            xml_path:
+              type:
+                type: named
+                name: String
+          result_type:
+            type: named
+            name: String
     capabilities:
-      version: ""
+      version: 0.1.6
       capabilities:
-        query: {}
-        mutation: {}
+        query:
+          aggregates: {}
+          variables: {}
+          explain: {}
+        mutation:
+          transactional: {}

@@ -1,0 +1,93 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: SemanticSearchWiki
+  fields:
+    - name: content
+      type: String!
+    - name: lastModified
+      type: Json!
+    - name: namespace
+      type: Int!
+    - name: pageId
+      type: Int!
+    - name: similarity
+      type: Float
+    - name: title
+      type: String!
+  graphql:
+    typeName: SemanticSearchWiki
+    inputTypeName: SemanticSearchWikiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypython
+      dataConnectorObjectType: semanticSearchWiki
+      fieldMapping:
+        content:
+          column:
+            name: content
+        lastModified:
+          column:
+            name: last_modified
+        namespace:
+          column:
+            name: namespace
+        pageId:
+          column:
+            name: page_id
+        similarity:
+          column:
+            name: similarity
+        title:
+          column:
+            name: title
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: SemanticSearchWiki
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - content
+          - lastModified
+          - namespace
+          - pageId
+          - similarity
+          - title
+
+---
+kind: Command
+version: v1
+definition:
+  name: SemanticSearchWiki
+  outputType: "[SemanticSearchWiki!]!"
+  arguments:
+    - name: limit
+      type: Int
+    - name: namespace
+      type: Int
+    - name: offset
+      type: Int
+    - name: text
+      type: String!
+  source:
+    dataConnectorName: mypython
+    dataConnectorCommand:
+      function: semanticSearchWiki
+  graphql:
+    rootFieldName: semanticSearchWiki
+    rootFieldKind: Query
+  description: Search wiki pages using semantic similarity with optional namespace filtering
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: SemanticSearchWiki
+  permissions:
+    - role: admin
+      allowExecution: true
+

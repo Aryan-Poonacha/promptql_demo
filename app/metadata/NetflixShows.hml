@@ -1,0 +1,252 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: NetflixShows
+  fields:
+    - name: castMembers
+      type: Text
+    - name: country
+      type: Text
+    - name: dateAdded
+      type: Date
+    - name: description
+      type: Text
+    - name: director
+      type: Text
+    - name: duration
+      type: Text
+    - name: listedIn
+      type: Text
+    - name: rating
+      type: Text
+    - name: releaseYear
+      type: Int4
+    - name: showId
+      type: Text!
+    - name: title
+      type: Text
+    - name: type
+      type: Text
+  graphql:
+    typeName: NetflixShows
+    inputTypeName: NetflixShowsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: netflix_shows
+      fieldMapping:
+        castMembers:
+          column:
+            name: cast_members
+        country:
+          column:
+            name: country
+        dateAdded:
+          column:
+            name: date_added
+        description:
+          column:
+            name: description
+        director:
+          column:
+            name: director
+        duration:
+          column:
+            name: duration
+        listedIn:
+          column:
+            name: listed_in
+        rating:
+          column:
+            name: rating
+        releaseYear:
+          column:
+            name: release_year
+        showId:
+          column:
+            name: show_id
+        title:
+          column:
+            name: title
+        type:
+          column:
+            name: type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: NetflixShows
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - castMembers
+          - country
+          - dateAdded
+          - description
+          - director
+          - duration
+          - listedIn
+          - rating
+          - releaseYear
+          - showId
+          - title
+          - type
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: NetflixShowsBoolExp
+  operand:
+    object:
+      type: NetflixShows
+      comparableFields:
+        - fieldName: castMembers
+          booleanExpressionType: TextBoolExp
+        - fieldName: country
+          booleanExpressionType: TextBoolExp
+        - fieldName: dateAdded
+          booleanExpressionType: DateBoolExp
+        - fieldName: description
+          booleanExpressionType: TextBoolExp
+        - fieldName: director
+          booleanExpressionType: TextBoolExp
+        - fieldName: duration
+          booleanExpressionType: TextBoolExp
+        - fieldName: listedIn
+          booleanExpressionType: TextBoolExp
+        - fieldName: rating
+          booleanExpressionType: TextBoolExp
+        - fieldName: releaseYear
+          booleanExpressionType: Int4BoolExp
+        - fieldName: showId
+          booleanExpressionType: TextBoolExp
+        - fieldName: title
+          booleanExpressionType: TextBoolExp
+        - fieldName: type
+          booleanExpressionType: TextBoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: NetflixShowsBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: NetflixShowsAggExp
+  operand:
+    object:
+      aggregatedType: NetflixShows
+      aggregatableFields:
+        - fieldName: castMembers
+          aggregateExpression: TextAggExp
+        - fieldName: country
+          aggregateExpression: TextAggExp
+        - fieldName: dateAdded
+          aggregateExpression: DateAggExp
+        - fieldName: description
+          aggregateExpression: TextAggExp
+        - fieldName: director
+          aggregateExpression: TextAggExp
+        - fieldName: duration
+          aggregateExpression: TextAggExp
+        - fieldName: listedIn
+          aggregateExpression: TextAggExp
+        - fieldName: rating
+          aggregateExpression: TextAggExp
+        - fieldName: releaseYear
+          aggregateExpression: Int4AggExp
+        - fieldName: showId
+          aggregateExpression: TextAggExp
+        - fieldName: title
+          aggregateExpression: TextAggExp
+        - fieldName: type
+          aggregateExpression: TextAggExp
+  count:
+    enable: true
+  graphql:
+    selectTypeName: NetflixShowsAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: NetflixShowsOrderByExp
+  operand:
+    object:
+      orderedType: NetflixShows
+      orderableFields:
+        - fieldName: castMembers
+          orderByExpression: TextOrderByExp
+        - fieldName: country
+          orderByExpression: TextOrderByExp
+        - fieldName: dateAdded
+          orderByExpression: DateOrderByExp
+        - fieldName: description
+          orderByExpression: TextOrderByExp
+        - fieldName: director
+          orderByExpression: TextOrderByExp
+        - fieldName: duration
+          orderByExpression: TextOrderByExp
+        - fieldName: listedIn
+          orderByExpression: TextOrderByExp
+        - fieldName: rating
+          orderByExpression: TextOrderByExp
+        - fieldName: releaseYear
+          orderByExpression: Int4OrderByExp
+        - fieldName: showId
+          orderByExpression: TextOrderByExp
+        - fieldName: title
+          orderByExpression: TextOrderByExp
+        - fieldName: type
+          orderByExpression: TextOrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: NetflixShowsOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: NetflixShows
+  objectType: NetflixShows
+  source:
+    dataConnectorName: mypostgres
+    collection: netflix_shows
+  filterExpressionType: NetflixShowsBoolExp
+  aggregateExpression: NetflixShowsAggExp
+  orderByExpression: NetflixShowsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: netflixShows
+      subscription:
+        rootField: netflixShows
+    selectUniques:
+      - queryRootField: netflixShowsByShowId
+        uniqueIdentifier:
+          - showId
+        subscription:
+          rootField: netflixShowsByShowId
+    filterInputTypeName: NetflixShowsFilterInput
+    aggregate:
+      queryRootField: netflixShowsAggregate
+      subscription:
+        rootField: netflixShowsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: NetflixShows
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+

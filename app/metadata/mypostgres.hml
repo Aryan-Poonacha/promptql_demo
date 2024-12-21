@@ -14,13 +14,952 @@ definition:
   schema:
     version: v0.1
     schema:
-      scalar_types: {}
-      object_types: {}
-      collections: []
+      scalar_types:
+        date:
+          representation:
+            type: date
+          aggregate_functions:
+            max:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: date
+            min:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: date
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: custom
+              argument_type:
+                type: named
+                name: date
+            _gte:
+              type: custom
+              argument_type:
+                type: named
+                name: date
+            _in:
+              type: in
+            _lt:
+              type: custom
+              argument_type:
+                type: named
+                name: date
+            _lte:
+              type: custom
+              argument_type:
+                type: named
+                name: date
+            _neq:
+              type: custom
+              argument_type:
+                type: named
+                name: date
+        int4:
+          representation:
+            type: int32
+          aggregate_functions:
+            avg:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            bit_and:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            bit_or:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            bit_xor:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            max:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            min:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            stddev:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            sum:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int8
+            var_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            var_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            variance:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: custom
+              argument_type:
+                type: named
+                name: int4
+            _gte:
+              type: custom
+              argument_type:
+                type: named
+                name: int4
+            _in:
+              type: in
+            _lt:
+              type: custom
+              argument_type:
+                type: named
+                name: int4
+            _lte:
+              type: custom
+              argument_type:
+                type: named
+                name: int4
+            _neq:
+              type: custom
+              argument_type:
+                type: named
+                name: int4
+        int8:
+          representation:
+            type: int64
+          aggregate_functions:
+            avg:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            bit_and:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int8
+            bit_or:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int8
+            bit_xor:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int8
+            max:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int8
+            min:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int8
+            stddev:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            sum:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            var_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            var_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            variance:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: custom
+              argument_type:
+                type: named
+                name: int8
+            _gte:
+              type: custom
+              argument_type:
+                type: named
+                name: int8
+            _in:
+              type: in
+            _lt:
+              type: custom
+              argument_type:
+                type: named
+                name: int8
+            _lte:
+              type: custom
+              argument_type:
+                type: named
+                name: int8
+            _neq:
+              type: custom
+              argument_type:
+                type: named
+                name: int8
+        numeric:
+          representation:
+            type: bigdecimal
+          aggregate_functions:
+            avg:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            max:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            min:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            stddev_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            sum:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            var_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            var_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+            variance:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: numeric
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: custom
+              argument_type:
+                type: named
+                name: numeric
+            _gte:
+              type: custom
+              argument_type:
+                type: named
+                name: numeric
+            _in:
+              type: in
+            _lt:
+              type: custom
+              argument_type:
+                type: named
+                name: numeric
+            _lte:
+              type: custom
+              argument_type:
+                type: named
+                name: numeric
+            _neq:
+              type: custom
+              argument_type:
+                type: named
+                name: numeric
+        text:
+          representation:
+            type: string
+          aggregate_functions:
+            max:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            min:
+              result_type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _gte:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _ilike:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _in:
+              type: in
+            _iregex:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _like:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _lt:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _lte:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _neq:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _nilike:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _niregex:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _nlike:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _nregex:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            _regex:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            starts_with:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+            ts_match_tt:
+              type: custom
+              argument_type:
+                type: named
+                name: text
+      object_types:
+        delete_netflix_shows_by_show_id_response:
+          description: Responses from the 'delete_netflix_shows_by_show_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                type: named
+                name: int4
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                type: array
+                element_type:
+                  type: named
+                  name: netflix_shows
+        insert_netflix_shows_object:
+          fields:
+            cast_members:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            country:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            date_added:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: date
+            description:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            director:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            duration:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            listed_in:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            rating:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            release_year:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            show_id:
+              type:
+                type: named
+                name: text
+            title:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            type:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        insert_netflix_shows_response:
+          description: Responses from the 'insert_netflix_shows' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                type: named
+                name: int4
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                type: array
+                element_type:
+                  type: named
+                  name: netflix_shows
+        netflix_shows:
+          fields:
+            cast_members:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            country:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            date_added:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: date
+            description:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            director:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            duration:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            listed_in:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            rating:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            release_year:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+            show_id:
+              type:
+                type: named
+                name: text
+            title:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+            type:
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_cast_members:
+          description: Update the 'cast_members' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_country:
+          description: Update the 'country' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_date_added:
+          description: Update the 'date_added' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: date
+        update_column_netflix_shows_description:
+          description: Update the 'description' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_director:
+          description: Update the 'director' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_duration:
+          description: Update the 'duration' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_listed_in:
+          description: Update the 'listed_in' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_rating:
+          description: Update the 'rating' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_release_year:
+          description: Update the 'release_year' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: int4
+        update_column_netflix_shows_show_id:
+          description: Update the 'show_id' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: named
+                name: text
+        update_column_netflix_shows_title:
+          description: Update the 'title' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_column_netflix_shows_type:
+          description: Update the 'type' column in the 'netflix_shows' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: text
+        update_netflix_shows_by_show_id_response:
+          description: Responses from the 'update_netflix_shows_by_show_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                type: named
+                name: int4
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                type: array
+                element_type:
+                  type: named
+                  name: netflix_shows
+        update_netflix_shows_by_show_id_update_columns:
+          description: Update the columns of the 'netflix_shows' collection
+          fields:
+            cast_members:
+              description: Update the 'cast_members' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_cast_members
+            country:
+              description: Update the 'country' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_country
+            date_added:
+              description: Update the 'date_added' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_date_added
+            description:
+              description: Update the 'description' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_description
+            director:
+              description: Update the 'director' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_director
+            duration:
+              description: Update the 'duration' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_duration
+            listed_in:
+              description: Update the 'listed_in' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_listed_in
+            rating:
+              description: Update the 'rating' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_rating
+            release_year:
+              description: Update the 'release_year' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_release_year
+            show_id:
+              description: Update the 'show_id' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_show_id
+            title:
+              description: Update the 'title' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_title
+            type:
+              description: Update the 'type' column in the 'netflix_shows' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  type: named
+                  name: update_column_netflix_shows_type
+      collections:
+        - name: netflix_shows
+          arguments: {}
+          type: netflix_shows
+          uniqueness_constraints:
+            netflix_shows_pkey:
+              unique_columns:
+                - show_id
+          foreign_keys: {}
       functions: []
-      procedures: []
+      procedures:
+        - name: delete_netflix_shows_by_show_id
+          description: Delete any row on the 'netflix_shows' collection using the 'show_id' key
+          arguments:
+            key_show_id:
+              type:
+                type: named
+                name: text
+            pre_check:
+              description: Delete permission predicate over the 'netflix_shows' collection
+              type:
+                type: nullable
+                underlying_type:
+                  type: predicate
+                  object_type_name: netflix_shows
+          result_type:
+            type: named
+            name: delete_netflix_shows_by_show_id_response
+        - name: insert_netflix_shows
+          description: Insert into the netflix_shows table
+          arguments:
+            objects:
+              type:
+                type: array
+                element_type:
+                  type: named
+                  name: insert_netflix_shows_object
+            post_check:
+              description: Insert permission predicate over the 'netflix_shows' collection
+              type:
+                type: nullable
+                underlying_type:
+                  type: predicate
+                  object_type_name: netflix_shows
+          result_type:
+            type: named
+            name: insert_netflix_shows_response
+        - name: update_netflix_shows_by_show_id
+          description: Update any row on the 'netflix_shows' collection using the 'show_id' key
+          arguments:
+            key_show_id:
+              type:
+                type: named
+                name: text
+            post_check:
+              description: Update permission post-condition predicate over the 'netflix_shows' collection
+              type:
+                type: nullable
+                underlying_type:
+                  type: predicate
+                  object_type_name: netflix_shows
+            pre_check:
+              description: Update permission pre-condition predicate over the 'netflix_shows' collection
+              type:
+                type: nullable
+                underlying_type:
+                  type: predicate
+                  object_type_name: netflix_shows
+            update_columns:
+              type:
+                type: named
+                name: update_netflix_shows_by_show_id_update_columns
+          result_type:
+            type: named
+            name: update_netflix_shows_by_show_id_response
     capabilities:
-      version: ""
+      version: 0.1.6
       capabilities:
-        query: {}
-        mutation: {}
+        query:
+          aggregates: {}
+          variables: {}
+          explain: {}
+          nested_fields:
+            filter_by: {}
+            order_by: {}
+          exists:
+            nested_collections: {}
+        mutation:
+          transactional: {}
+          explain: {}
+        relationships:
+          relation_comparisons: {}
+          order_by_aggregate: {}

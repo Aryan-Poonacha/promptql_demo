@@ -1,0 +1,574 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsCastMembers
+  description: Update the 'cast_members' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsCastMembers
+    inputTypeName: UpdateColumnNetflixShowsCastMembersInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_cast_members
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsCastMembers
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsCountry
+  description: Update the 'country' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsCountry
+    inputTypeName: UpdateColumnNetflixShowsCountryInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_country
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsCountry
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsDateAdded
+  description: Update the 'date_added' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Date
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsDateAdded
+    inputTypeName: UpdateColumnNetflixShowsDateAddedInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_date_added
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsDateAdded
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsDescription
+  description: Update the 'description' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsDescription
+    inputTypeName: UpdateColumnNetflixShowsDescriptionInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_description
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsDescription
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsDirector
+  description: Update the 'director' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsDirector
+    inputTypeName: UpdateColumnNetflixShowsDirectorInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_director
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsDirector
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsDuration
+  description: Update the 'duration' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsDuration
+    inputTypeName: UpdateColumnNetflixShowsDurationInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_duration
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsDuration
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsListedIn
+  description: Update the 'listed_in' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsListedIn
+    inputTypeName: UpdateColumnNetflixShowsListedInInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_listed_in
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsListedIn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsRating
+  description: Update the 'rating' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsRating
+    inputTypeName: UpdateColumnNetflixShowsRatingInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_rating
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsRating
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsReleaseYear
+  description: Update the 'release_year' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Int4
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsReleaseYear
+    inputTypeName: UpdateColumnNetflixShowsReleaseYearInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_release_year
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsReleaseYear
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsShowId
+  description: Update the 'show_id' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsShowId
+    inputTypeName: UpdateColumnNetflixShowsShowIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_show_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsShowId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsTitle
+  description: Update the 'title' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsTitle
+    inputTypeName: UpdateColumnNetflixShowsTitleInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_title
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsTitle
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNetflixShowsType
+  description: Update the 'type' column in the 'netflix_shows' collection
+  fields:
+    - name: set
+      type: Text
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNetflixShowsType
+    inputTypeName: UpdateColumnNetflixShowsTypeInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_column_netflix_shows_type
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNetflixShowsType
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateNetflixShowsByShowIdUpdateColumns
+  description: Update the columns of the 'netflix_shows' collection
+  fields:
+    - name: castMembers
+      type: UpdateColumnNetflixShowsCastMembers
+      description: Update the 'cast_members' column in the 'netflix_shows' collection.
+    - name: country
+      type: UpdateColumnNetflixShowsCountry
+      description: Update the 'country' column in the 'netflix_shows' collection.
+    - name: dateAdded
+      type: UpdateColumnNetflixShowsDateAdded
+      description: Update the 'date_added' column in the 'netflix_shows' collection.
+    - name: description
+      type: UpdateColumnNetflixShowsDescription
+      description: Update the 'description' column in the 'netflix_shows' collection.
+    - name: director
+      type: UpdateColumnNetflixShowsDirector
+      description: Update the 'director' column in the 'netflix_shows' collection.
+    - name: duration
+      type: UpdateColumnNetflixShowsDuration
+      description: Update the 'duration' column in the 'netflix_shows' collection.
+    - name: listedIn
+      type: UpdateColumnNetflixShowsListedIn
+      description: Update the 'listed_in' column in the 'netflix_shows' collection.
+    - name: rating
+      type: UpdateColumnNetflixShowsRating
+      description: Update the 'rating' column in the 'netflix_shows' collection.
+    - name: releaseYear
+      type: UpdateColumnNetflixShowsReleaseYear
+      description: Update the 'release_year' column in the 'netflix_shows' collection.
+    - name: showId
+      type: UpdateColumnNetflixShowsShowId
+      description: Update the 'show_id' column in the 'netflix_shows' collection.
+    - name: title
+      type: UpdateColumnNetflixShowsTitle
+      description: Update the 'title' column in the 'netflix_shows' collection.
+    - name: type
+      type: UpdateColumnNetflixShowsType
+      description: Update the 'type' column in the 'netflix_shows' collection.
+  graphql:
+    typeName: UpdateNetflixShowsByShowIdUpdateColumns
+    inputTypeName: UpdateNetflixShowsByShowIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_netflix_shows_by_show_id_update_columns
+      fieldMapping:
+        castMembers:
+          column:
+            name: cast_members
+        country:
+          column:
+            name: country
+        dateAdded:
+          column:
+            name: date_added
+        description:
+          column:
+            name: description
+        director:
+          column:
+            name: director
+        duration:
+          column:
+            name: duration
+        listedIn:
+          column:
+            name: listed_in
+        rating:
+          column:
+            name: rating
+        releaseYear:
+          column:
+            name: release_year
+        showId:
+          column:
+            name: show_id
+        title:
+          column:
+            name: title
+        type:
+          column:
+            name: type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateNetflixShowsByShowIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - castMembers
+          - country
+          - dateAdded
+          - description
+          - director
+          - duration
+          - listedIn
+          - rating
+          - releaseYear
+          - showId
+          - title
+          - type
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateNetflixShowsByShowIdResponse
+  description: Responses from the 'update_netflix_shows_by_show_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int4!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[NetflixShows!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateNetflixShowsByShowIdResponse
+    inputTypeName: UpdateNetflixShowsByShowIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: mypostgres
+      dataConnectorObjectType: update_netflix_shows_by_show_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateNetflixShowsByShowIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateNetflixShowsByShowId
+  outputType: UpdateNetflixShowsByShowIdResponse!
+  arguments:
+    - name: keyShowId
+      type: Text!
+    - name: postCheck
+      type: NetflixShowsBoolExp
+      description: Update permission post-condition predicate over the 'netflix_shows'
+        collection
+    - name: preCheck
+      type: NetflixShowsBoolExp
+      description: Update permission pre-condition predicate over the 'netflix_shows'
+        collection
+    - name: updateColumns
+      type: UpdateNetflixShowsByShowIdUpdateColumns!
+  source:
+    dataConnectorName: mypostgres
+    dataConnectorCommand:
+      procedure: update_netflix_shows_by_show_id
+    argumentMapping:
+      keyShowId: key_show_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateNetflixShowsByShowId
+    rootFieldKind: Mutation
+  description: Update any row on the 'netflix_shows' collection using the 'show_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateNetflixShowsByShowId
+  permissions:
+    - role: admin
+      allowExecution: true
+

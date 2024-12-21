@@ -1,0 +1,29 @@
+---
+kind: Command
+version: v1
+definition:
+  name: VectorizeWiki
+  outputType: String!
+  arguments:
+    - name: xmlPath
+      type: String!
+  source:
+    dataConnectorName: mypython
+    dataConnectorCommand:
+      procedure: vectorizeWiki
+    argumentMapping:
+      xmlPath: xml_path
+  graphql:
+    rootFieldName: vectorizeWiki
+    rootFieldKind: Mutation
+  description: Process MediaWiki XML dump and generate embeddings for all pages
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: VectorizeWiki
+  permissions:
+    - role: admin
+      allowExecution: true
+
